@@ -4,6 +4,14 @@
 #include <sstream>
 using namespace std;
 
+// std::unique_lock is more flexible than std::lock_guard.
+// Objects of std::unique_lock manage the locking and unlocking operations on the mutex object with exclusive ownership
+// (no other unique_lock objects owning the ownership of a mutex object).
+// So in concurrent programming, it is recommended to use std::unique_lock.
+
+// std::lock_guard cannot explicitly call lock and unlock, and std::unique_lock can be called anywhere after the declaration.
+// It can reduce the scope of the lock and provide higher concurrency.
+
 int v = 1;
 
 void criticalSection(int change_v) {
