@@ -32,7 +32,6 @@ int main() {
     //Launching Thread Using Function Pointer
     thread t1 (myThreadApi, "Buddy T1");
 
-
     thread t2 (myThreadApi, "Buddy T2");
     for (int i = 0; i < 10; i++) {
         cout << "\nI am in Main";
